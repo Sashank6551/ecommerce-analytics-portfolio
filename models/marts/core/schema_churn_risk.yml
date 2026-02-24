@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: fct_churn_risk_score
+    description: "Customer churn risk scoring model with 0-100 risk scores and tier classifications"
+    
+    columns:
+      - name: user_id
+        description: "Unique customer identifier"
+        tests:
+          - not_null
+          - unique
+          
+      - name: churn_risk_score
+        description: "Composite risk score (0-100). 0=healthy, 100=churned. Weighted: Recency 40%, Frequency 30%, Monetary 30%"
+        tests:
+          - not_null
+          
+      - name: risk_tier
+        description: "Risk classification: Low (0-25), Medium (26-50), High (51-75), Critical (76-100)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Low Risk', 'Medium Risk', 'High Risk', 'Critical Risk']
+              
+      - name: days_since_last_order
+        description: "Days elapsed since customer's most recent order"
+        
+      - name: flag_overdue_order
+        description: "TRUE if customer is overdue for next order (>2x avg order frequency)"
+        
+      - name: flag_90d_inactive
+        description: "TRUE if customer has not ordered in last 90 days but has prior orders"
+        
+      - name: flag_revenue_drop
+        description: "TRUE if recent revenue is <50% of historical average"
