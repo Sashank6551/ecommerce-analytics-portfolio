@@ -333,6 +333,8 @@ Built on **TheLook E-Commerce** (BigQuery Public Dataset) to demonstrate:
 
 ![ERD Diagram](documentation/data_model_ERD.png)
 
+![dbt Lineage Graph Preview to Show models & dependancies](documentation/dbt_Docs.png)
+
 ---
 
 ## 🔬 Methodology
