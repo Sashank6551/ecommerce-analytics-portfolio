@@ -105,7 +105,7 @@ ecommerce-analytics-portfolio/
 - Order status breakdown (25% completion rate - investigate!)
 - Top 5 products by revenue (Nike dominates)
 
-![Executive Summary](documentation/outputs/screenshots/page1_executive_summary.png)
+![Executive Summary](outputs/screenshots/page1_executive_summary.png)
 
 ---
 
